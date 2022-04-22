@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-f@0ocn)ubl*a&9k5w4%fmtl84qazn0=8=0$8fe2(+_s-p+rsj@
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['sampledomain.com']
+ALLOWED_HOSTS = ['polls.herokuapp.com', 'localhost', '127.0.0.1'] 
 
 AUTH_PROFILE_MODULE = "profiles.Profile"
 # Application definition
