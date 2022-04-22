@@ -1,0 +1,57 @@
+{% extends 'polls/base.html' %}
+{% load static %}
+       {% block content %}
+<div class="row">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                     <li  {% if message.tags %} class=" {{ message.tags }} " {% endif %}> {{ message }} </li>
+                {% endfor %}
+            </ul>
+            {% endif %}</div>
+       <div class="content1">
+        <div>
+        <p>The Kazakh people are rich in traditions. From birth through old age and death, every step of their lives has historically been marked with celebration. Even their funeral ceremonies have their own special symbolism.</p>
+    </div></div>
+           
+
+           
+            <div class="content2" >
+          
+          <ul>
+            {% for i in custom %}
+              <li>
+                      <div class="container">
+                          <div class="row"><h3>{{ i.name }}</h3></div>
+                           <div class="row" id="cus">
+                              <div class="col-7" ><p> {{ i.info|truncatewords:60 }}</p>
+                                <div class="row">
+                                  <div class="col-2">
+                                    <a class="btn btn-dark " href="/update_customs/{{ i.id }}">  Edit</a> 
+                                  </div>
+                                  <div class="col-2">
+                                     <a class="btn btn-dark"  href="/delete_customs/{{ i.id }}"> Delete</a>
+                                  </div>
+                                </div>
+                                
+                           </div>
+                              <div class="col-5">
+                                {% if i.picture %}<img src="/media/{{ i.picture }}" class="img img-responsive">{% endif %}
+                              </div>
+                             
+                          </div>
+                      </div>
+                  
+                  <hr>
+              </li>
+              {% empty %}
+              <p>No Record Found!</p>
+                    
+                    {% endfor %}
+          </ul>
+
+    
+    <br><br>
+    <div class="container">
+    <a href="/create_customs" id="add" class="btn btn-dark ">Add New Record</a></div></div>
+    {% endblock %}

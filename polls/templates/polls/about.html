@@ -1,0 +1,36 @@
+{% extends 'polls/base.html' %}
+{% load static %}
+ {% block content %}
+      <div class="about1">
+        <div class="carousel">
+              <div class="row">
+                  <div class="col-5">
+                       <img src="https://tr-kazakhstan.kz/wp-includes/2015/05/post33big1.jpg" alt="">
+                  </div>
+                  <div class="col-7">
+                       <p>The Republic of Kazakhstan is located in the center of Eurasia, mostly geographically located in Asia and less in Europe. The lands of Kazakhstan are washed by the Caspian Sea, and border with China, the Urals, Siberia, Central Asia and the Lower Volga Region.
+
+            Multinational Kazakhstan began to form in the 15th century, when the Kazakh Khanate flourished. It was formed due to the creation of a nation, which included Turkic Mongol tribes.</p>
+           </div>
+              </div>
+          </div>
+         
+          </div>
+          <hr>        
+    <div class="about2">
+        <div class="carousel">
+      <div class="row">
+        {% for cl in about %} 
+        <div class="col-4">
+          <h2>{{ cl.question }}</h2>
+          <div class="card" style="width: 23rem;">
+            <img src='{{cl.picture.url}}' class="card-img-top" alt="...">
+            <div class="card-body">
+              <p class="card-text">{{ cl.answer }}</p>
+            </div>
+          </div>
+        </div> {% endfor %}
+      </div></div>
+    </div>{% endblock %}
+
+   
